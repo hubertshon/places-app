@@ -18,8 +18,8 @@ class Api::PlacesController < ApplicationController
     if @place.save
       render "show.json.jb"
     else
-      render json: { message: @place.errors.full_messages },
-      status: :bad_request
+      render json: { errors: @place.errors.full_messages },
+      status: :unprocessable_entity
     end
   end
 
@@ -30,8 +30,8 @@ class Api::PlacesController < ApplicationController
     if @place.save
       render "show.json.jb"
     else
-      render json: { message: @place.errors.full_messages },
-      status: :bad_request
+      render json: { errors: @place.errors.full_messages },
+      status: :unprocessable_entity
     end
   end
 
